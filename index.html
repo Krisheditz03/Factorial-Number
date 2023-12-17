@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Number</title>
+     <style>
+        body{
+            background-color: red;
+        }
+
+        h1{
+            justify-content: center;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        div{
+            font-size: 50px;
+            justify-content: center;
+            text-align: center;
+        }
+        #factorialTxtId{
+            border-radius: 5px;
+            border: 2px solid blue;
+            font-size: 30px;
+        }
+        #factorialButtonId{
+            font-size: 30px;
+            border: 2px solid green;
+            border-radius: 10px;
+            background-color: yellow;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1><u>Factorial Calculator</u></h1>
+
+    
+        <div>
+            <label for="factorialTxtId" id="label1">Enter a number :</label>
+            <input type="text" class="text_input" id="factorialTxtId"/><br> <br></b><input type="button" value="Calculate" id="factorialButtonId" onclick="calculate()"/><br><br>
+            <div>
+            Factorial of <span id="inputValueID"></span> is: <div id="checkValue"></div>
+            </div>
+          </div>
+    
+
+    <script>
+        function calculate() {
+//var inputValue = prompt("Plese enter number for factorial: ");
+var inputValue = document.getElementById('factorialTxtId').value;
+var checkValue = isNaN(inputValue);
+
+if (!checkValue) {
+    document.getElementById('inputValueID').innerHTML = inputValue;
+    var final = 1;
+    
+    while(inputValue >= 1) {
+        final = final * inputValue;
+        inputValue--;
+    }
+    
+    document.getElementById('checkValue').innerHTML = final;
+}
+}
+    </script>
+</body>
+</html>
